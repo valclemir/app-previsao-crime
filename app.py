@@ -6,13 +6,16 @@ import joblib  # Para carregar o modelo salvo
 # Certifique-se de que o modelo salvo esteja no mesmo diretório, ou ajuste o caminho
 model = joblib.load("model-catboost-violencia.pkl")  # Substitua pelo nome do arquivo do modelo salvo
 
+# Ocultar o rodapé, menu principal e foto do perfil
 hide_st_style = """
 <style>
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
+._profileContainer_gzau3_53 {display: none;}
 </style>
 """
 st.markdown(hide_st_style, unsafe_allow_html=True)
+
 
 # Dicionários de Conversão
 natureza_roubo = {
