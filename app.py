@@ -6,6 +6,14 @@ import joblib  # Para carregar o modelo salvo
 # Certifique-se de que o modelo salvo esteja no mesmo diretório, ou ajuste o caminho
 model = joblib.load("model-catboost-violencia.pkl")  # Substitua pelo nome do arquivo do modelo salvo
 
+hide_st_style = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+</style>
+"""
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 # Dicionários de Conversão
 natureza_roubo = {
     1: "Pessoa",
@@ -118,6 +126,8 @@ bairro_data = {
 
 # App Streamlit
 st.title("Previsão de Crime")
+
+
 
 # Entrada do usuário
 st.sidebar.header("Insira os dados do caso")
